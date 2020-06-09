@@ -7,6 +7,14 @@ function submitAction(){
 }, function(response){
     // response could contain the url of the newly saved file
 })
+    var arr = JSON.stringify('jsonN.json');
+    var arb = JSON.parse('[' + arr + ']');
+    console.log(arr);
+    jQuery.post('recieve2.php', {
+    arr: arr
+}, function(response){
+    // response could contain the url of the newly saved file
+})
 }
 //     // var xmlhttp = new XMLHttpRequest();   // new HttpRequest instance 
 //     // var theUrl = "recieve.php";
