@@ -73,6 +73,10 @@ nav ul li a:hover {
   text-decoration: underline;
 }
 
+nav ul li a .fas {
+  padding-right: 10px;
+}
+
 .container h1 {
   font-family: 'Exo', sans-serif;
   font-weight: 700;
