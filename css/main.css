@@ -6,6 +6,8 @@
 }
 
 body {
+  height: 100%;
+  overflow-y: hidden;
   padding: 0;
   margin: 0;
   -webkit-box-sizing: border-box;
