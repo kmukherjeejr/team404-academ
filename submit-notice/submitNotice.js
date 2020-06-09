@@ -7,11 +7,11 @@ function submitAction(){
 }, function(response){
     // response could contain the url of the newly saved file
 })
-    var arr = JSON.stringify('jsonN.json');
-    var arb = JSON.parse('[' + arr + ']');
-    console.log(arr);
+    var arr = JSON.parse('http://hackathon.hattsoffstore.com/submit-notice/jsonN.json');
+    var arb = JSON.stringify('[' + arr + ']');
+    console.log(arb);
     jQuery.post('recieve2.php', {
-    arr: arr
+    arb: arb
 }, function(response){
     // response could contain the url of the newly saved file
 })

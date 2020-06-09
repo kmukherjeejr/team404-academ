@@ -37,7 +37,7 @@ let hpNotices = [];
 
 const loadNotices = async () => {
     try {
-        const res = await fetch('http://hackathon.hattsoffstore.com/json/jsonN.json');
+        const res = await fetch('http://hackathon.hattsoffstore.com/submit-notice/jsonNotice.json');
         hpNotices = await res.json();
         displayNotices(hpNotices);
     } catch (err) {
