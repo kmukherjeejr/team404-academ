@@ -3,7 +3,7 @@ let hpNotices = [];
 
 const loadNotices = async () => {
   try {
-    const res = await fetch('/json/jsonN.json');
+    const res = await fetch('http://hackathon.hattsoffstore.com/submit-notice/jsonN.json');
     hpNotices = await res.json();
     displayNotices(hpNotices);
   } catch(err) {
