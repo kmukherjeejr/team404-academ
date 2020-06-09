@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,700;0,800;0,900;1,700;1,800;1,900&display=swap');
+
+// Responsive Breakpoint
+$bp-large: 66em;        //1056px
+$bp-medium: 55em;       //880px
+$bp-small: 40em;        //640px
+$bp-smallest: 30em;     //480px
+
+:root {
+    --primary-color: #30336b;
+    --secondary-color: #be2edd;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 300;
+    transition: transform 0.3s ease;
+}
+
+header {
+    background-color: var(--primary-color);
+    color: #fff;
+    font-size: 130%;
+    position: relative;
+    padding: 40px 15px;
+    text-align: center;
+
+    h1 {
+        font-family: 'Exo', sans-serif;
+        text-transform: uppercase;
+        font-weight: 800;
+        margin: 0;
+    }
+}
+
+.live-class {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media only screen and (max-width: $bp-medium){
+        flex-direction: column;
+    }
+
+    .live-video {
+        .content {
+            iframe {
+                height: 360px;
+                width: 640px;
+
+                @media only screen and (max-width: $bp-large){
+                    height: 270px;
+                    width: 480px;
+                }
+
+                @media only screen and (max-width: $bp-medium){
+                    height: 360px;
+                    width: 640px;
+                }
+
+                @media only screen and (max-width: $bp-small){
+                    height: 270px;
+                    width: 480px;
+                }
+
+                @media only screen and (max-width: $bp-smallest){
+                    height: 198px;
+                    width: 352px;
+                }
+            }
+        }
+    }
+
+    .live-chat {
+        margin-left: 20px;
+
+        @media only screen and (max-width: $bp-medium){
+            margin-left: 0;
+            margin-bottom: 50px;
+        }
+
+        .content {
+            border: 2px solid #000;
+            border-radius: 5px;
+
+            iframe {
+                height: 350px;
+                width: 360px;
+
+                @media only screen and (max-width: $bp-large){
+                    height: 260px;
+                    width: 360px;
+                }
+
+                @media only screen and (max-width: $bp-medium){
+                    height: 360px;
+                    width: 480px;
+                }
+                
+                @media only screen and (max-width: $bp-smallest){
+                    height: 198px;
+                    width: 352px;
+                }
+            }
+        }
+    }
+}
