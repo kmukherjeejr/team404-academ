@@ -1,0 +1,162 @@
+<html>
+    <head>
+        <title>Login/Registration Page</title>
+        <link rel="stylesheet" href="login_style.css">
+    </head>
+    <body>
+        <div id=loading-mask></div>
+        <div class="LogBox">
+            <div class="FormBox">
+
+                <div id="user_div" class="loggedIn">
+                    <h3 style="text-align:center;">Welcome!</h3>
+                    <p id="user_para" style="text-align:center;">You're currently logged in.</p>
+                    <br><br>
+                    <button class="SubmitBtn" onclick="logout()">Logout</button>
+                </div>
+                <div id="form">
+                <!-- <div class="gmail">
+                    <img src="gmail_logo.png">
+                </div> -->
+                <div class="ButtonBox">
+                    <div id="btn"></div>
+                    <button type="button" class="ToggleBtn" onclick="login()">LOGIN</button>
+                    <button type="button" class="ToggleBtn" onclick="register()">REGISTER</button>
+                </div>
+                <form id="login" method="post" class="InputGroup">
+                    <input type="text" class="InputField" id="logemail" placeholder="User Email" required>
+                    <input type="password" class="InputField" id="logpass" placeholder="Enter Password" required>
+                    <br><br><br>
+                    <!-- <input type="checkbox" class="CheckBox"><span>Remember Password</span> -->
+                    <button type="button" onclick="signin();" class="SubmitBtn">Login</button>
+                </form>
+                <form id="register" method="post" class="InputGroup">
+                    <input type="email" class="InputField" id="regemail" placeholder="Email ID" required>
+                    <input type="password" class="InputField" id="regpass" placeholder="Enter Password" required>
+                    <br><br>
+                    <label for="role">You are a </label>
+                    <select class="dropdown" name="role" id="role">
+                        <option value="student">Student</option>
+                        <option value="teacher">Teacher</option>
+                    </select>
+                    <br>
+                    <input type="checkbox" class="CheckBox" id="check" required><span>I agree to the Terms & Conditions</span>
+                    <button type="button" onclick="signup();" class="SubmitBtn">Register</button>
+                </form>
+                </div>
+            </div>
+        </div>
+        <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-functions.js"></script>
+        <script>
+            // Initialize Firebase
+            var config = {
+              apiKey: "AIzaSyDZyQ1441WgfPp_o97lalh-axJ8IQIt12I",
+              authDomain: "team404-project-academe.firebaseapp.com",
+              databaseURL: "https://team404-project-academe.firebaseio.com",
+              projectId: "team404-project-academe",
+              storageBucket: "team404-project-academe.appspot.com",
+              messagingSenderId: "503516019048",
+              appId: "1:503516019048:web:77d0be61f6b6ba7e95bedd",
+              measurementId: "G-PZVB3JBC4Z"
+            };
+            firebase.initializeApp(config);
+            const functions = firebase.functions();
+            
+            var x = document.getElementById("login");
+            var y = document.getElementById("register");
+            var z = document.getElementById("btn");
+            function register()
+            {
+                    x.style.left="-400px";
+                    y.style.left="50px";
+                    z.style.left="110px";
+            }
+            function login()
+            {
+                    x.style.left="50px";
+                    y.style.left="450px";
+                    z.style.left="0";
+            }
+
+            firebase.auth().onAuthStateChanged(function(user) {
+            if (user) {
+                document.getElementById("user_div").style.display = "block";
+                document.getElementById("form").style.display = "none";
+                var user = firebase.auth().currentUser;
+                if(user != null){
+                var email_id = user.email;
+                document.getElementById("user_para").innerHTML = "Logged in with: " + email_id;
+
+                //Checkin if admin, which isn't working for some reason
+                 user.getIdTokenResult().then(idTokenResult =>{
+                     //window.alert(idTokenResult.claims.admin);
+                     if(idTokenResult.claims.admin==true)
+                     {
+                        window.alert("You are an Admin");
+                     }
+                })
+
+                }
+            } else {
+                document.getElementById("user_div").style.display = "none";
+            }
+            });
+
+            function logout()
+            {
+            firebase.auth().signOut();
+            document.getElementById("form").style.display = "block";
+            }
+
+            function signin(){
+                var userEmail = document.getElementById("logemail").value;
+                var userPass = document.getElementById("logpass").value;
+                //window.alert(userEmail+" "+userPass);
+                window.alert("Signed In");
+                firebase.auth().signInWithEmailAndPassword(userEmail, userPass).catch(function(error) {
+                var errorCode = error.code;
+                var errorMessage = error.message;
+                window.alert("Error "+ errorMessage);
+                });
+            }
+
+            function signup(){
+                var userEmail = document.getElementById("regemail").value;
+                var userPass = document.getElementById("regpass").value;
+                var userRole = document.getElementById("role").value;
+                var check = document.getElementById("check").checked;
+                //window.alert(userEmail+" "+userPass+" "+role);
+                if(check==true)
+                {
+                    window.alert("Registered");
+                    firebase.auth().createUserWithEmailAndPassword(userEmail, userPass).catch(function(error) {
+                    var errorCode = error.code;
+                    var errorMessage = error.message;
+                    window.alert("Error "+ errorMessage);
+                    });
+                    //window.alert(userRole);
+                    if(userRole === "teacher")
+                    {
+
+                        //Adding admin role
+                        window.alert(userEmail+" is a Teacher");
+                        const addAdminRole = functions.httpsCallable('addAdminRole');
+                        addAdminRole({email:userEmail}).then(result=>{
+                            console.log(result);
+                        });
+                    }
+                }
+                else
+                {
+                    window.alert("Please Agree to Terms & Conditions");
+                }
+            }
+            window.onload=function() {
+            document.getElementById('loading-mask').style.display='none';
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+*{
+    margin:0;
+    padding:0;
+    font-family: 'Ubuntu', sans-serif;
+}
+.LogBox{
+    height: 100%;
+    width: 100%;
+    background-image: 
+    linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)),url(login_bg.jpg);
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+}
+.FormBox{
+    width: 380px;
+    height: 380px;
+    position: relative;
+    margin: 8% auto;
+    background:rgba(194, 194, 194, 0.95);
+    padding: 5px;
+    overflow: hidden;
+}
+.ButtonBox{
+    width: 225px;
+    margin: 35px auto;
+    position: relative;
+    box-shadow: 0 0 20px 9px rgba(122, 122, 122, 0.15);
+    border-radius: 30px;
+}
+.ToggleBtn{
+    padding: 10px 30px;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    outline: none;
+    position: relative;
+}
+#btn{
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 115px;
+    height: 100%;
+    background: linear-gradient(to right, rgb(242, 120, 64),rgb(156, 64, 242));
+    border-radius: 30px;
+    transition: 0.5s;
+}
+.gmail{
+    margin: 30px auto;
+    text-align: center;
+}
+.gmail img{
+    width: 200px;
+    margin: 0 12px;
+    box-shadow: 0 0 20px 0 rgba(248, 43, 43, 0.233);
+    cursor: pointer;
+}
+.InputGroup{
+    top: 120px;
+    position: absolute;
+    width: 280px;
+    transition: 0.5s;
+}
+.InputField{
+    width: 100%;
+    padding: 10px 0;
+    margin: 5px 0;
+    border-left: 0;
+    border-right: 0;
+    border-top: 0;
+    border-bottom: 1px solid rgb(95, 95, 95);
+    outline: none;
+    background: transparent;
+}
+.SubmitBtn{
+    width:85%;
+    padding: 10px 30px;
+    cursor: pointer;
+    display: block;
+    margin: auto;
+    background: linear-gradient(to right, rgba(242, 120, 64, 1),rgb(156, 64, 242));
+    border: 0;
+    outline: none;
+    border-radius: 30px;
+}
+.CheckBox{
+    margin: 30px 10px 30px 0;
+}
+span{
+    color: rgba(54, 54, 54, 0.87);
+    font-size: 12px;
+    bottom: 68px;
+    position: absolute;
+}
+#login{
+    left:50px;
+}
+#register{
+    left:450px;
+}
+.loggedin{
+    top: 40%;
+    width: 100%;
+    position: absolute;
+
+}
+.dropdown{
+    /* color: rgba(54, 54, 54, 0.87); */
+    background-color:rgba(54, 54, 54, 0.1);
+}
+#loading-mask {
+    background-color: white;
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+}
