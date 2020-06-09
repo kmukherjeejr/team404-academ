@@ -17,7 +17,7 @@ h1 {
     position: relative;
 }
 
-.accordion {
+.container .accordion {
     background-color: #eee;
     color: #444;
     cursor: pointer;
@@ -33,11 +33,11 @@ h1 {
     font-weight: 600;
   }
   
-  .active, .accordion:hover {
+  .container .active, .accordion:hover {
     background-color: #ccc; 
   }
   
-  .panel {
+  .container .panel {
     padding: 0 18px;
     background-color: white;
     max-height: 0;
