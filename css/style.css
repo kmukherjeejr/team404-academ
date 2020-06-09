@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap");
 :root {
-  --modal-duration: 1s;
   --primary-color: #30336b;
   --secondary-color: #be2edd;
 }
@@ -119,5 +118,15 @@ button:focus {
   margin: 0 auto;
   max-width: 100%;
   width: 1000px;
+}
+
+.container .notification {
+  height: 70vh;
+}
+
+.container .notification iframe {
+  height: 100%;
+  width: 100%;
+  border: none;
 }
 /*# sourceMappingURL=style.css.map */

@@ -1,7 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
 
+
+// Responsive Breakpoint
+$bp-largest: 68.25em;   //1100px
+$bp-large: 62em;        //992px
+$bp-medium: 50em;       //800px
+$bp-small: 37.5em;      //600px
+$bp-smallest: 25em;     //400px
+
 :root {
-    --modal-duration: 1s;
     --primary-color: #30336b;
     --secondary-color: #be2edd;
 }
@@ -116,4 +123,14 @@ button:focus {
     margin: 0 auto;
     max-width: 100%;
     width: 1000px;
+
+    .notification {
+        height: 70vh;
+
+        iframe {
+            height: 100%;
+            width: 100%;
+            border: none;
+        }
+    }
 }
