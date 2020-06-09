@@ -5,6 +5,12 @@ body{
     font-family: 'Ubuntu', sans-serif;
 }
 
+h1 {
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
 .board{
     text-decoration: underline;
     text-align: center;

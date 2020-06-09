@@ -26,6 +26,52 @@ body {
 body.show-nav {
     /* Width of nav */
     transform: translateX(200px);
+
+    .container {
+        transform: translateX(-100px);
+    }
+
+    header {
+        h1 {
+            transform: translateX(-100px);
+        }
+    }
+}
+
+header {
+    background-color: var(--primary-color);
+    color: #fff;
+    font-size: 130%;
+    position: relative;
+    padding: 40px 15px;
+    text-align: center;
+    margin-bottom: 50px;
+
+    h1 {
+        font-family: 'Exo', sans-serif;
+        text-transform: uppercase;
+        font-weight: 800;
+        margin: 0;
+        transition: transform 0.3s ease;
+    }
+}
+
+.container {
+    padding: 0px;
+    margin: 0 auto;
+    max-width: 100%;
+    width: 1000px;
+    transition: transform 0.3s ease;
+
+    .pages {
+        height: 70vh;
+
+        iframe {
+            height: 100%;
+            width: 100%;
+            border: none;
+        }
+    }
 }
   
 nav {
@@ -59,47 +105,17 @@ nav {
         li {
             border-bottom: 2px solid rgba(200, 200, 200, 0.1);
             padding: 20px;
+            cursor: pointer;
 
             &:first-of-type {
                 border-top: 2px solid rgba(200, 200, 200, 0.1);
             }
 
-            a {
-                color: #fff;
-                text-decoration: none;
-
-                &:hover {
-                    text-decoration: underline;
-                }
-
-                .fas {
-                    padding-right: 10px;
-                }
+            .fas,
+            .far {
+                padding-right: 10px;
             }
         }
-    }
-}
-
-.container h1 {
-    font-family: 'Exo', sans-serif;
-    font-weight: 700;
-    font-size: 30px;
-    text-align: center;
-}
-  
-header {
-    background-color: var(--primary-color);
-    color: #fff;
-    font-size: 130%;
-    position: relative;
-    padding: 40px 15px;
-    text-align: center;
-
-    h1 {
-        font-family: 'Exo', sans-serif;
-        text-transform: uppercase;
-        font-weight: 800;
-        margin: 0;
     }
 }
 
@@ -127,22 +143,4 @@ button:focus {
 .cta-btn {
     padding: 12px 30px;
     font-size: 20px;
-}
-
-
-.container {
-    padding: 0px;
-    margin: 0 auto;
-    max-width: 100%;
-    width: 1000px;
-
-    .notification {
-        height: 70vh;
-
-        iframe {
-            height: 100%;
-            width: 100%;
-            border: none;
-        }
-    }
 }

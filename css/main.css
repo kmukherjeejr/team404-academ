@@ -24,6 +24,58 @@ body.show-nav {
           transform: translateX(200px);
 }
 
+body.show-nav .container {
+  -webkit-transform: translateX(-100px);
+          transform: translateX(-100px);
+}
+
+body.show-nav header h1 {
+  -webkit-transform: translateX(-100px);
+          transform: translateX(-100px);
+}
+
+header {
+  background-color: var(--primary-color);
+  color: #fff;
+  font-size: 130%;
+  position: relative;
+  padding: 40px 15px;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+header h1 {
+  font-family: 'Exo', sans-serif;
+  text-transform: uppercase;
+  font-weight: 800;
+  margin: 0;
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+}
+
+.container {
+  padding: 0px;
+  margin: 0 auto;
+  max-width: 100%;
+  width: 1000px;
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+}
+
+.container .pages {
+  height: 70vh;
+}
+
+.container .pages iframe {
+  height: 100%;
+  width: 100%;
+  border: none;
+}
+
 nav {
   background-color: var(--primary-color);
   border-right: 2px solid rgba(200, 200, 200, 0.1);
@@ -58,46 +110,16 @@ nav ul {
 nav ul li {
   border-bottom: 2px solid rgba(200, 200, 200, 0.1);
   padding: 20px;
+  cursor: pointer;
 }
 
 nav ul li:first-of-type {
   border-top: 2px solid rgba(200, 200, 200, 0.1);
 }
 
-nav ul li a {
-  color: #fff;
-  text-decoration: none;
-}
-
-nav ul li a:hover {
-  text-decoration: underline;
-}
-
-nav ul li a .fas {
+nav ul li .fas,
+nav ul li .far {
   padding-right: 10px;
-}
-
-.container h1 {
-  font-family: 'Exo', sans-serif;
-  font-weight: 700;
-  font-size: 30px;
-  text-align: center;
-}
-
-header {
-  background-color: var(--primary-color);
-  color: #fff;
-  font-size: 130%;
-  position: relative;
-  padding: 40px 15px;
-  text-align: center;
-}
-
-header h1 {
-  font-family: 'Exo', sans-serif;
-  text-transform: uppercase;
-  font-weight: 800;
-  margin: 0;
 }
 
 button {
@@ -123,22 +145,5 @@ button:focus {
 .cta-btn {
   padding: 12px 30px;
   font-size: 20px;
-}
-
-.container {
-  padding: 0px;
-  margin: 0 auto;
-  max-width: 100%;
-  width: 1000px;
-}
-
-.container .notification {
-  height: 70vh;
-}
-
-.container .notification iframe {
-  height: 100%;
-  width: 100%;
-  border: none;
 }
 /*# sourceMappingURL=main.css.map */

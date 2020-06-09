@@ -18,47 +18,37 @@
             <img src="assets/default-user.png" alt="user" /> 
         </div>
         <ul>
-            <li>
-                <a href="#">
-                    <i class="fas fa-user-lock"></i>
-                    Login/Sign Up
-                </a>
+            <li onclick="iFrameURL('#')">
+                <i class="fas fa-user-lock"></i>
+                Login/Sign Up
             </li>
-            <li>
-                <a href="#">
-                    <i class="fas fa-home"></i>
-                    Home
-                </a>
+            <li onclick="iFrameURL('notice/notice.html')"> 
+                <i class="fas fa-home"></i>
+                Home
             </li>
-            <li>
-                <a href="live-classes/live-classes.html">
-                    <i class="fas fa-broadcast-tower"></i>
-                    Live Classes
-                </a>
+            <li  onclick="iFrameURL('submit-notice/submitNotice.html')">
+                <i class="far fa-newspaper"></i>
+                Submit Notice
             </li>
-            <li>
-                <a href="#">
-                    <i class="fas fa-stream"></i>
-                    Study Materials
-                </a>
+            <li onclick="iFrameURL('live-classes/live-classes.html')">
+                <i class="fas fa-broadcast-tower"></i>
+                Live Classes
             </li>
-            <li>
-                <a href="#">
-                    <i class="fas fa-file-alt"></i>
-                    Assignments
-                </a>
+            <li onclick="iFrameURL('#')">
+                <i class="fas fa-stream"></i>
+                Study Materials
             </li>
-            <li>
-                <a href="#">
-                    <i class="fas fa-user-graduate"></i>
-                    Exam Portal
-                </a>
+            <li onclick="iFrameURL('#')">
+                <i class="fas fa-file-alt"></i>
+                Assignments
             </li>
-            <li>
-                <a href="marksheet/marksheet.html">
-                    <i class="fas fa-table"></i>
-                    Marksheet
-                </a>
+            <li onclick="iFrameURL('#')">
+                <i class="fas fa-user-graduate"></i>
+                Exam Portal
+            </li>
+            <li onclick="iFrameURL('marksheet/marksheet.html')">
+                <i class="fas fa-table"></i>
+                Marksheet
             </li>
         </ul>
     </nav>
@@ -73,9 +63,8 @@
     </header>
 
     <div class="container">
-        <h1>NOTICE BOARD</h1>
-        <div class="notification">
-            <iframe src="notice/notice.html"></iframe>
+        <div class="pages">
+            <iframe id="iframe" src="notice/notice.html"></iframe>
         </div>
     </div>
 
