@@ -33,6 +33,10 @@ h1 {
     font-weight: 600;
   }
   
+  .container ul li {
+    list-style: none;
+  }
+
   .container .active, .accordion:hover {
     background-color: #ccc; 
   }
