@@ -23,3 +23,14 @@ function submitAction(){
 // // }, function(response){
 // //     // response could contain the url of the newly saved file
 // // })
+
+
+// clear Text area 
+var submitButton = document.querySelector('#submit-button');
+var textarea1 = document.querySelector('#myTextarea1');
+var textarea2 = document.querySelector('#myTextarea2');
+
+submitButton.addEventListener('click', function () {
+    textarea1.value = '';
+    textarea2.value = '';
+}, false);
