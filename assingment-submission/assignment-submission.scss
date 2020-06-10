@@ -6,7 +6,6 @@ body {
     margin: 0;
     box-sizing: border-box;
     font-family: 'Ubuntu', sans-serif;
-    font-weight: 300;
     transition: transform 0.3s ease;
 }
 
@@ -14,4 +13,23 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+
+    .done {
+        font-family: 'Exo', sans-serif;
+        font-weight: 800;
+    }
+
+    .checked-icon {
+        height: 50px;
+        width: 50px;
+        margin-bottom: 30px;
+
+        .fa {
+            height: 100%;
+            width: 100%;
+            color: #43a047;
+        }
+    }
+
 }

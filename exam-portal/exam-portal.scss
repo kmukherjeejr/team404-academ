@@ -14,4 +14,17 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+
+    .checked-icon {
+        height: 50px;
+        width: 50px;
+        margin-bottom: 30px;
+
+        .fa {
+            height: 100%;
+            width: 100%;
+            color: #43a047;
+        }
+    }
 }

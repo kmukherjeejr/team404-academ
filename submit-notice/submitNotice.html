@@ -4,39 +4,38 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
         <link rel = "stylesheet" type = "text/css" href = "submitNotice.css"/>
         <link href="https://fonts.googleapis.com/css2?family=Exo&display=swap" rel="stylesheet">
+        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
         <title>Document</title>
     </head>
     <body>
-        <!-- <form action="/action_page.php">
-            <label for="headN">Heading for the Notice : </label><br>
-            <input type="text" value="ABC NOTICE"><br>
-            <label for="bodyN">Your Notice Body : </label><br>
-            <input type="text" value="Give you body"><br><br>
-            <input type="submit" value="Submit">
-        </form>  -->
-        <div>
+
+        <h1 class="head">Add a Notice</h1>
+
+        <div class="add-icon">
+            <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
+        </div>
+        
+        <div class="notice-form">
             <label>Heading of the Information : </label>
+            <br>
             <textarea rows="4" cols="50"  id="myTextarea1"></textarea>
             <br>
             <br>
             <label>Body of the Information : </label>
+            <br>
             <textarea rows="4" cols="50" id="myTextarea2"></textarea>
             <br>
             <br>
         </div>
+
         <button onclick="submitAction()">Submit</button>
+
+
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script type = "text/javascript" src = "submitNotice.js">
-        </script>
-        <!-- <form enctype='application/json'>
-            <input name='name' value='Bender'>
-            <select name='hind'>
-              <option selected>Bitable</option>
-              <option>Kickable</option>
-            </select>
-            <input type='checkbox' name='shiny' checked>
-        </form> -->
+        <script type="text/javascript" src="submitNotice.js"></script>
     </body>
 </html>
