@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,OAAO,CAAC,wFAAI;AACZ,OAAO,CAAC,8GAAI;AAEZ,AAAA,IAAI,CAAC;EACD,OAAO,EAAE,CAAC;EACV,MAAM,EAAE,CAAC;EACT,UAAU,EAAE,UAAU;EACtB,WAAW,EAAE,oBAAoB;EACjC,WAAW,EAAE,GAAG;EAChB,UAAU,EAAE,mBAAmB;CAClC;;AAED,AAAA,UAAU,CAAC;EACP,OAAO,EAAE,IAAI;EACb,eAAe,EAAE,MAAM;EACvB,WAAW,EAAE,MAAM;CACtB",
+    "sources": [
+        "assingment-submission.scss"
+    ],
+    "names": [],
+    "file": "assingment-submission.css"
+}
