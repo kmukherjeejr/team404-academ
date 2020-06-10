@@ -115,8 +115,10 @@
                 var userEmail = document.getElementById("logemail").value;
                 var userPass = document.getElementById("logpass").value;
                 //window.alert(userEmail+" "+userPass);
-                window.alert("Signed In");
-                firebase.auth().signInWithEmailAndPassword(userEmail, userPass).catch(function(error) {
+                //window.alert("Signed In");
+                firebase.auth().signInWithEmailAndPassword(userEmail, userPass).then(user => {
+                        window.alert("Signed In");
+                    }).catch(function(error) {
                 var errorCode = error.code;
                 var errorMessage = error.message;
                 window.alert("Error "+ errorMessage);
@@ -131,8 +133,10 @@
                 //window.alert(userEmail+" "+userPass+" "+role);
                 if(check==true)
                 {
-                    window.alert("Registered");
-                    firebase.auth().createUserWithEmailAndPassword(userEmail, userPass).catch(function(error) {
+                    // window.alert("Registered");
+                    firebase.auth().createUserWithEmailAndPassword(userEmail, userPass).then(user => {
+                        window.alert("Registered");
+                    }).catch(function(error) {
                     var errorCode = error.code;
                     var errorMessage = error.message;
                     window.alert("Error "+ errorMessage);
