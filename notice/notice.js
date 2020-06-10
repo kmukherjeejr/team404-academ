@@ -50,7 +50,7 @@ const displayNotices = (notices) => {
         .map((notice) => {
             return `
             <li class="character">
-              <button class="accordion">${notice.heading}</button>
+              <button class="accordion" onclick="myfunc()">${notice.heading}</button>
               <div class="panel">
                 <p>${notice.body}</p>
               </div>
@@ -93,7 +93,7 @@ loadNotices();
 
 // loadNotices();
 
-
+function myfunc(){
 var acc = document.getElementsByClassName("accordion");
 var i;
 
@@ -107,10 +107,10 @@ for (i = 0; i < acc.length; i++) {
       panel.style.maxHeight = panel.scrollHeight + "px";
     } 
   });
+  }
 }
 
-
-function myFunction() {
-    var x = document.lastModified;
-    document.getElementById("demo").innerHTML = x;
-  }
+// function myFunction() {
+//     var x = document.lastModified;
+//     document.getElementById("demo").innerHTML = x;
+//   }
