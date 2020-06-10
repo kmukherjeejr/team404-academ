@@ -7,14 +7,24 @@ function submitAction(){
 }, function(response){
     // response could contain the url of the newly saved file
 })
-    var arr = JSON.parse('http://hackathon.hattsoffstore.com/submit-notice/jsonN.json');
-    var arb = JSON.stringify('[' + arr + ']');
-    console.log(arb);
-    jQuery.post('recieve2.php', {
-    arb: arb
-}, function(response){
-    // response could contain the url of the newly saved file
-})
+
+    var url = 'http://hackathon.hattsoffstore.com/submit-notice/jsonN.json';
+    let arr = await fetch(url);
+    if(arr.ok)
+    {
+        let arb = await arr.JSON();
+        var arc = JSON.stringify(arb);
+        console.log(arb);
+        jQuery.post('recieve2.php', {
+        arc: arc
+        }, function(response){
+        // response could contain the url of the newly saved file
+        })
+    }
+    else
+    {
+        alert('HTTP-ERROR!'+arr.status);
+    }
 }
 //     // var xmlhttp = new XMLHttpRequest();   // new HttpRequest instance 
 //     // var theUrl = "recieve.php";
