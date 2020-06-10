@@ -6,7 +6,6 @@ body {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   font-family: 'Ubuntu', sans-serif;
-  font-weight: 300;
   -webkit-transition: -webkit-transform 0.3s ease;
   transition: -webkit-transform 0.3s ease;
   transition: transform 0.3s ease;
@@ -34,6 +33,10 @@ body {
   font-weight: 800;
   text-transform: uppercase;
   font-size: 40px;
+}
+
+.container h2 {
+  font-weight: 300;
 }
 
 .container .checked-icon {
