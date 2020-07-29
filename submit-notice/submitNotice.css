@@ -5,11 +5,6 @@
   --secondary-color: #be2edd;
 }
 
-:root {
-  --primary-color: #30336b;
-  --secondary-color: #be2edd;
-}
-
 body {
   padding: 0;
   margin: 0;
@@ -61,4 +56,3 @@ button {
   padding: 10px;
   margin-top: 20px;
 }
-/*# sourceMappingURL=submitNotice.css.map */
